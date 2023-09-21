@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Button({style, name}) {
+export default function Button({ color, name, click }) {
   return (
     <div>
-        <button style = {style} className=' py-3 rounded-lg px-16'>{name}</button>
+      <button className={`px-16 py-3 rounded-lg ${color === 'primary' ? 'bg-[#7339AC]' : 'bg-[#E59500]'}`} onClick={click}>{name}</button>
     </div>
   )
 }
