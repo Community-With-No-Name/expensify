@@ -47,7 +47,7 @@ export default function register() {
             </a>
           </label>
         </div>
-        <div className=" flex justify-center items-center">
+        <div className="text-white text-center m-4">
           <Button color={"primary"} name={"Register"}></Button>
         </div>
         <h1 className="  flex justify-center items-center m-4 font-bold">OR</h1>
