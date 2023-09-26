@@ -1,5 +1,33 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-export default function handler(req, res) {
-  res.status(200).json({ name: 'John Doe' })
+import dbConnect from "@/dbConnect";
+import User from "@/schema/User";
+import bcrypt from "bcryptjs"
+
+export default async function handler(req, res) {
+  await dbConnect()
+  const {email, password, username} = req.body
+  await User.findOne({email})
+  .then(async (user)=>{
+    console.log("log")
+    if(user){
+    console.log("log")
+
+      res.status(409).json({
+        user,
+        message: "User already exists"
+      })
+    }
+    else {
+    console.log("log")
+const hash = await bcrypt.hash(password, 10)
+      await User.create({email, password:hash, username})
+      .then((newUser)=>{
+        res.status(200).json({
+          user: newUser,
+          message: "User created successfully"
+        })
+      })
+    }
+  })
 }
