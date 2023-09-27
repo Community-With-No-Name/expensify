@@ -5,8 +5,22 @@ import React from "react";
 import Link from "next/link";
 
 export default function register() {
+  const [state, setState] = React.useState({
+    email: "",
+    username: "",
+    password: ""
+  })
+  const handleChange=(e)=>{
+    setState({
+      ...state,
+      [e.target.name]: e.target.value
+    })
+  }
+  const handleSubmit=()=>{
+    console.log("yada yada")
+  }
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <div>
         <div className="flex items-center justify-start m-7">
           <FaArrowLeftLong className="h-6 w-7"></FaArrowLeftLong>
@@ -16,16 +30,22 @@ export default function register() {
         </div>
         <div className="flex flex-col gap-6">
           <InputComp
+          name="email"
             placeholder={"E-mail Address"}
             type="email"
             required={true}
+            change={handleChange}
           ></InputComp>
           <InputComp
-            placeholder={"Password"}
-            type="password"
+          name="username"
+          change={handleChange}
+            placeholder={"Username"}
+            type="text"
             required={true}
           ></InputComp>
           <InputComp
+          name="password"
+          change={handleChange}
             placeholder={"Confirm Password"}
             type="password"
             required={true}
@@ -49,7 +69,7 @@ export default function register() {
           </label>
         </div>
         <div className="m-4 text-center text-white">
-          <Button color={"primary"} name={"Register"}></Button>
+          <Button color={"primary"} name={"Register"} type={"submit"}></Button>
         </div>
         <h1 className="flex items-center justify-center m-4 font-bold ">OR</h1>
         <div className="flex items-center justify-center ">
@@ -84,6 +104,6 @@ export default function register() {
           </h1>
         </div>
       </div>
-    </div>
+    </form>
   );
 }
