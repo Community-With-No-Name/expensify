@@ -6,12 +6,13 @@ import Link from "next/link";
 import { useMutation } from '@tanstack/react-query'
 import { sign_up } from "@/api/apiCalls";
 import { SIGN_UP } from "@/api/apiURL";
+import { useRouter } from "next/router";
 
 export default function register() {
+  const router = useRouter()
   const {mutate} = useMutation( sign_up , {
-    onSuccess(data){
-      console.log(data)
-      
+    onSuccess(){
+      router.push('/auth/login', "/auth/login")
     }
   })
   

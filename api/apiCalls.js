@@ -14,7 +14,9 @@ export const postRequest = async ({ url, data } ) => {
 
   export const login = async ({url, data}) => {
     const res = await axios.post(url, data)
+    return res.data
   }
   export const sign_up = async ({url, data}) => {
     const res = await axios.post(url, data)
+    return res.data
   }
