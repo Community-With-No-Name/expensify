@@ -8,6 +8,7 @@ import { sign_up } from "@/api/apiCalls";
 import { SIGN_UP } from "@/api/apiURL";
 import { useRouter } from "next/router";
 
+
 export default function register() {
   const router = useRouter()
   const {mutate} = useMutation( sign_up , {
