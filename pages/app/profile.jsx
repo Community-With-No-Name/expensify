@@ -1,6 +1,5 @@
 import React from 'react'
 import Nav from "@/components/shared/nav";
-
 import { LuPen } from 'react-icons/lu';
 import { FaWallet } from 'react-icons/fa';
 import { FiSettings } from 'react-icons/fi';
