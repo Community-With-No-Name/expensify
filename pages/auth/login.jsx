@@ -1,12 +1,43 @@
+import { login } from "@/api/apiCalls";
+import { LOGIN } from "@/api/apiURL";
 import Button from "@/components/shared/button";
 import InputComp from "@/components/shared/input";
+import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
 export default function latest() {
+  const router = useRouter()
+  const {mutate} = useMutation( login , {
+    onSuccess(data){
+      console.log(data)
+      localStorage.setItem("ex_pensify_token", data?.token )
+      router.push('/app/home', "/app/home")
+    }
+  })
+  
+  const [state, setState] = React.useState({
+    email: "",
+    password: ""
+  })
+  const handleChange=(e)=>{
+    setState({
+      ...state,
+      [e.target.name]: e.target.value
+    })
+  }
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    console.log(state)
+    mutate({
+      url : LOGIN,
+      data: state
+    })
+  }
   return (
-    <div className="m-8 ">
+    <form onSubmit={handleSubmit} className="m-8 ">
 
       <div className="flex items-center mb-7">
         <AiOutlineArrowLeft className=" justify-start text-[#1466B8]" />
@@ -21,8 +52,8 @@ export default function latest() {
 
 
       <div className="flex flex-col gap-6">
-        <InputComp placeholder={"Email address"} required={true} type="email" />
-        <InputComp placeholder={"Password"} required={true} type="password" />
+        <InputComp name={"email"} change={handleChange} placeholder={"Email address"} required={true} type="email" />
+        <InputComp  name={"password"} change={handleChange} placeholder={"Password"} required={true} type="password" />
       </div>
       <div className="">
 
@@ -35,7 +66,7 @@ export default function latest() {
       </div>
 
       <div className="m-4 text-center text-white ">
-        <Button color={"primary"} name={"Log in"} />
+        <Button type={"submit"} color={"primary"} name={"Log in"} />
       </div>
 
       <div className="text-center mt-9">OR Log in with</div>
@@ -50,6 +81,6 @@ export default function latest() {
         </p>
       </div>
       </div>
-    </div>
+    </form>
   );
 }

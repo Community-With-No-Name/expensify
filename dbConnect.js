@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-const ATLAS_URI = process.env.ATLAS_URI || "mongodb://127.0.0.1:27017/expensify"
+const ATLAS_URI = process.env.ATLAS_URI || "mongodb+srv://Musa:Jewbreel1@cluster0.ewf3o.mongodb.net/expensify?retryWrites=true&w=majority"
 async function dbConnect () {
     return await mongoose.connect(ATLAS_URI).then(mongoose => {
         console.log("Mongoose Server connected Successfully")

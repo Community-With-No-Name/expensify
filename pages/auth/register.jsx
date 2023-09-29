@@ -3,8 +3,19 @@ import InputComp from "@/components/shared/input";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import React from "react";
 import Link from "next/link";
+import { useMutation } from '@tanstack/react-query'
+import { sign_up } from "@/api/apiCalls";
+import { SIGN_UP } from "@/api/apiURL";
+import { useRouter } from "next/router";
 
 export default function register() {
+  const router = useRouter()
+  const {mutate} = useMutation( sign_up , {
+    onSuccess(){
+      router.push('/auth/login', "/auth/login")
+    }
+  })
+  
   const [state, setState] = React.useState({
     email: "",
     username: "",
@@ -16,8 +27,13 @@ export default function register() {
       [e.target.name]: e.target.value
     })
   }
-  const handleSubmit=()=>{
-    console.log("yada yada")
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    console.log(state)
+    mutate({
+      url : SIGN_UP,
+      data: state
+    })
   }
   return (
     <form onSubmit={handleSubmit}>
