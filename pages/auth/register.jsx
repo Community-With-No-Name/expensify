@@ -99,7 +99,7 @@ export default function register() {
           </a>
           <a>
             <img
-              src="/Twitter.png"
+              src="/Twitter.jpg"
               alt="twitter"
               className="w-20 h-20 m-5 hover:cursor-pointer"
             />

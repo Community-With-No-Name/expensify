@@ -5,9 +5,14 @@ import { FaWallet } from 'react-icons/fa';
 import { FiSettings } from 'react-icons/fi';
 import { TfiExport } from 'react-icons/tfi';
 import { BsBoxArrowRight } from 'react-icons/bs';
+import Link from "next/link";
 
 
 export default function profile() {
+  const handleLogout = () => {
+    console.log('User Logged Out');
+    localStorage.clear();
+  };
   return (
     <div className='bg-gradient-to-t from yellow-50 bg-orange-100  items-center w-screen h-screen max-w-none '>
       <div className='flex pt-5 px-5 items-center justify-between pb-5'>
@@ -52,10 +57,10 @@ export default function profile() {
 
         </div>
         <div className='bg-white p-4 border-b rounded-b-lg shadow-inner'>
-          <div className='flex gap-3 items-center'>
+          <Link href='/' className='flex gap-3 items-center' onClick={handleLogout}>
             <div className='text-2xl text-violet-500  bg-purple-100 p-2 rounded' ><BsBoxArrowRight /></div>
-            <div className=' text-lg font-semibold  text-red-400'>Logout</div>
-          </div>
+            <div className=' text-lg font-semibold  text-red-400' >Logout</div>
+          </Link>
 
 
 
