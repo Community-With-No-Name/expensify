@@ -6,12 +6,17 @@ import { FiSettings } from 'react-icons/fi';
 import { TfiExport } from 'react-icons/tfi';
 import { BsBoxArrowRight } from 'react-icons/bs';
 import Link from "next/link";
+import { useMutation } from "@tanstack/react-query";
+import { login } from "@/api/apiCalls";
+import { LOGIN } from "@/api/apiURL";
+// import { state } from '../auth/login';
 
 
 export default function profile() {
-  const handleLogout = () => {
+
+  const handleLogout = (state) => {
+    localStorage.removeItem("ex_pensify_token");
     console.log('User Logged Out');
-    localStorage.clear();
   };
   return (
     <div className='bg-gradient-to-t from yellow-50 bg-orange-100  items-center w-screen h-screen max-w-none '>
