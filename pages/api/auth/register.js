@@ -9,17 +9,13 @@ export default async function handler(req, res) {
   const {email, password, username} = req.body
   await User.findOne({email})
   .then(async (user)=>{
-    console.log("log")
     if(user){
-    console.log("log")
-
       res.status(409).json({
         user,
         message: "User already exists"
       })
     }
     else {
-    console.log("log")
 const hash = await bcrypt.hash(password, 10)
       await User.create({email, password:hash, username})
       .then((newUser)=>{

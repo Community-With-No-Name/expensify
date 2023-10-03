@@ -12,7 +12,6 @@ export default async function handler(req, res) {
   const { email, password } = req.body
   await User.findOne({ email })
     .then(async (user) => {
-      console.log("log")
       if (user) {
         if (bcrypt.compareSync(password, user.password)) {
           const token = jwt.sign({

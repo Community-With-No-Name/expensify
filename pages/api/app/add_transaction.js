@@ -6,7 +6,6 @@ import jwt from "jsonwebtoken"
 
 export default async function handler(req, res) {
   await dbConnect()
-console.log(req.cookies, req.headers['authorization'])
   const decode = jwt.verify(req.headers['authorization'], "secret_key")
 
   const {

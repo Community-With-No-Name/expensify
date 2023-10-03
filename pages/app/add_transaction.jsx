@@ -49,7 +49,6 @@ export default function add_transaction() {
   
   const handleSubmit =(e)=> {
     e.preventDefault()
-    console.log(state)
     mutate({
       url : ADD_TRANSACTION,
       data: state

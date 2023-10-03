@@ -13,7 +13,6 @@ export default function latest() {
   const router = useRouter()
   const {mutate} = useMutation( login , {
     onSuccess(data){
-      console.log(data)
       localStorage.setItem("ex_pensify_token", data?.token )
       router.push('/app/home', "/app/home")
     }
@@ -31,7 +30,6 @@ export default function latest() {
   }
   const handleSubmit=(e)=>{
     e.preventDefault();
-    console.log(state)
     mutate({
       url : LOGIN,
       data: state
