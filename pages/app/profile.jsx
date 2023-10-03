@@ -6,15 +6,11 @@ import { FiSettings } from 'react-icons/fi';
 import { TfiExport } from 'react-icons/tfi';
 import { BsBoxArrowRight } from 'react-icons/bs';
 import Link from "next/link";
-import { useMutation } from "@tanstack/react-query";
-import { login } from "@/api/apiCalls";
-import { LOGIN } from "@/api/apiURL";
-// import { state } from '../auth/login';
 
 
 export default function profile() {
 
-  const handleLogout = (state) => {
+  const handleLogout = () => {
     localStorage.removeItem("ex_pensify_token");
     console.log('User Logged Out');
   };
