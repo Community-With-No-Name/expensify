@@ -30,7 +30,6 @@ export default function register() {
   }
   const handleSubmit=(e)=>{
     e.preventDefault();
-    console.log(state)
     mutate({
       url : SIGN_UP,
       data: state
