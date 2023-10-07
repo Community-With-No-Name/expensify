@@ -56,7 +56,7 @@ export default function profile() {
         </div>
         <div className='bg-white p-4 border-b rounded-b-lg shadow-lg'>
           <div className='flex gap-3 items-center'>
-            <div className='text-2xl text-violet-500  bg-purple-100 p-2 rounded' ><BsBoxArrowRight /></div>
+            <div className='text-2xl text-violet-500  bg-purple-100 p-2 rounded'><BsBoxArrowRight /></div>
             <div className=' text-lg font-semibold  text-red-400'>Logout</div>
           </div>
 
