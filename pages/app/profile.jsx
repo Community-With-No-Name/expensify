@@ -9,11 +9,14 @@ import { BsBoxArrowRight } from 'react-icons/bs';
 
 export default function profile() {
   return (
-    <div className='bg-gradient-to-t from yellow-50 bg-orange-100  items-center w-screen h-screen max-w-none '>
-      <div className='flex pt-5 px-5 items-center justify-between pb-5'>
+<div className=' '>
+
+  <div className='bg-orange-100 h-screen flex flex-col justify-evenly shadow-inner'>
+
+      <div className='flex px-5 items-center justify-between'>
         <img src="/passport.png" alt="" />
 
-        <div className='flex flex-col'>
+        <div className='flex flex-col '>
 <div className='text-zinc-400 text-sm font-medium'>Username</div>
 <div className='font-semibold text-xl'>Vishnu P V</div>
         </div>
@@ -21,9 +24,9 @@ export default function profile() {
         <div className='text-xl border p-2 rounded'><LuPen  /></div>
 
       </div>
-      < div className=' px-2 '>
+      < div className='px-2 '>
 
-      <div className='bg-white p-4 border-b rounded-t-lg shadow-inner'>
+      <div className='bg-white p-4 border-b rounded-t-lg shadow-lg '>
           <div className='flex gap-3 items-center'>
             <div className='text-2xl text-violet-500  bg-purple-100 p-2 rounded' ><FaWallet /></div>
             <div className=' text-lg font-semibold text-zinc-800'>Account</div>
@@ -33,7 +36,7 @@ export default function profile() {
 
         </div>
      
-        <div className='bg-white p-4 border-b shadow-inner'>
+        <div className='bg-white p-4 border-b shadow'>
           <div className='flex gap-3 items-center'>
             <div className='text-2xl text-violet-500  bg-purple-100 p-2 rounded' ><FiSettings /></div>
             <div className=' text-lg font-semibold text-zinc-800'>Settings</div>
@@ -42,7 +45,7 @@ export default function profile() {
 
 
         </div>
-        <div className='bg-white p-4 border-b shadow-inner'>
+        <div className='bg-white p-4 border-b shadow'>
           <div className='flex gap-3 items-center'>
             <div className='text-2xl text-violet-500  bg-purple-100 p-2 rounded' ><TfiExport /></div>
             <div className=' text-lg font-semibold text-zinc-800'>Export Data</div>
@@ -51,7 +54,7 @@ export default function profile() {
 
 
         </div>
-        <div className='bg-white p-4 border-b rounded-b-lg shadow-inner'>
+        <div className='bg-white p-4 border-b rounded-b-lg shadow-lg'>
           <div className='flex gap-3 items-center'>
             <div className='text-2xl text-violet-500  bg-purple-100 p-2 rounded' ><BsBoxArrowRight /></div>
             <div className=' text-lg font-semibold  text-red-400'>Logout</div>
@@ -65,8 +68,13 @@ export default function profile() {
     
 
       </div>
+      <div>
 
-<Nav />
+<Nav/>
+      </div>
+
+  </div>
+
      
       
       
