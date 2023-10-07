@@ -6,7 +6,8 @@ const TransactionsSchema = new mongoose.Schema({
     amount: String,
     date: Date,
     descripion: String,
-    createdAt: Date
+    createdAt: Date,
+    title: String
 })
 
 const Transaction = mongoose.models.Transaction || mongoose.model("Transaction", TransactionsSchema)

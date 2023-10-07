@@ -8,7 +8,7 @@ const apiToken = axios.create({
 apiToken.interceptors.request.use(
   (config) => {
     // Add authorization key to config object if it exist
-    const ex_pensify_token = localStorage.getItem('ex_pensify_token')
+    const ex_pensify_token = typeof window!== "undefined" && window.localStorage.getItem('ex_pensify_token')
     if (ex_pensify_token) {
       config.headers.Authorization = `${ex_pensify_token}`
     }

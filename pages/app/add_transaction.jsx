@@ -11,6 +11,12 @@ import React from "react";
 export default function add_transaction() {
   const inputList  = [
     {
+      placeholder: "Enter Title",
+      type: "text",
+      required: true,
+      name: "title"
+    },
+    {
       placeholder: "Enter Amount",
       type: "number",
       required: true,
@@ -32,7 +38,8 @@ export default function add_transaction() {
     category: "",
     amount: 0,
     date: new Date(),
-    description: ""
+    description: "",
+    title: ""
   })
   const handleChange =(e)=> {
     setState({
