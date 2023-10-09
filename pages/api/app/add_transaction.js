@@ -12,9 +12,11 @@ export default async function handler(req, res) {
     category,
     amount,
     date,
-    description
+    description,
+    title
   } = req.body;
-  await Transaction.create({category, amount, date, description, userId: decode.userId})
+  console.log(req.body)
+  await Transaction.create({category, amount, date, description, title, userId: decode.userId})
   .then((transaction)=>{
     res.status(201).json({ data: transaction })
   })
