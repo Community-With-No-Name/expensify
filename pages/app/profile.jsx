@@ -5,9 +5,18 @@ import { FaWallet } from 'react-icons/fa';
 import { FiSettings } from 'react-icons/fi';
 import { TfiExport } from 'react-icons/tfi';
 import { BsBoxArrowRight } from 'react-icons/bs';
+import { useRouter } from "next/router";
 
 
 export default function profile() {
+
+  const router = useRouter()
+  const handleLogout = () => {
+    localStorage.removeItem("ex_pensify_token");
+    router.push('/', "/")
+    console.log('User Logged Out');
+  };
+
   return (
 <div className=' '>
 
@@ -55,7 +64,7 @@ export default function profile() {
 
         </div>
         <div className='bg-white p-4 border-b rounded-b-lg shadow-lg'>
-          <div className='flex gap-3 items-center'>
+          <div className='flex gap-3 items-center' onClick={handleLogout}>
             <div className='text-2xl text-violet-500  bg-purple-100 p-2 rounded'><BsBoxArrowRight /></div>
             <div className=' text-lg font-semibold  text-red-400'>Logout</div>
           </div>
