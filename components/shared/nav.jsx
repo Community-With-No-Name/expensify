@@ -8,12 +8,11 @@ import { BsFillPersonFill } from 'react-icons/bs';
 
 export default function Nav() {
   return (
-    <div className='pt-7 justify-center '>
 
-
-  <div className="bg-white py-3 relative    ">
-    <nav className="container relative  ">
-      <ul className="flex  justify-between items-center text-2xl text-zinc-200">
+    <div className=' fixed  max-w-sm w-full  bottom-0'>
+  <div className="bg-white py-3 ">
+    <nav className="container  ">
+      <ul className="flex  justify-between items-center text-2xl text-zinc-300  mx-4">
    <li className='items-center flex flex-col'  >
     < BiSolidHomeAlt2 />
     <div className=" text-xs">home</div>
@@ -22,14 +21,14 @@ export default function Nav() {
     < RiArrowLeftRightFill />
     <div className="text-xs">transaction</div>
    </li>
-   <li className='text-4xl absolute left-[44%] items-center -top-9 p-2 bg-violet-400 text-white rounded-[50%] border-[5px] border-orange-100 '>
+   <li className='text-4xl absolute left-[44%] items-center -top-9 p-2 bg-violet-500 text-white rounded-[50%] border-[5px] border-orange-100 '>
     < AiOutlinePlus />
    </li>
    <li className='flex-col flex  items-center'>
     < IoTimer />
     <div className="text-xs">statistics</div>
    </li>
-   <li className='flex-col flex  items-center text-violet-400'>
+   <li className='flex-col flex  items-center text-violet-500'>
     < BsFillPersonFill />
     <div className="text-xs">profile</div>
    </li>

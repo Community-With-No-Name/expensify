@@ -8,10 +8,10 @@ import { BsFillPersonFill } from 'react-icons/bs';
 
 export default function Nav() {
   return (
-    <div className='pt-7 justify-center '>
+    <div className='fixed max-w-sm min-h-screen'>
 
 
-  <div className="bg-white py-3 relative    ">
+  <div className="bg-white  relative    ">
     <nav className="container relative  ">
       <ul className="flex  justify-between items-center text-2xl text-zinc-200">
    <li className='items-center flex flex-col'  >
