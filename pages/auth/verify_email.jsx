@@ -1,11 +1,12 @@
 import React from 'react'
 import { FaArrowLeftLong } from 'react-icons/fa6';
+import Hoc from '@/components/shared/Hoc'
 
 export default function verify_email() {
   return (
     <div className='bg-gray-100 w-screen h-screen overflow-hidden shadow-inner'>
+      <Hoc />
       <div className='p-10 '>
-
         <div className='flex justify-start items-center '>
           <div className='text-sky-700 '>< FaArrowLeftLong /></div>
           <div className='text-sky-700 text-2xl font-semibold flex justify-center w-screen'>Verification</div>

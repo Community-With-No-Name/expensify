@@ -2,10 +2,11 @@ import React from 'react'
 import Items from '@/components/home screen/items'
 import Transactions from '@/components/home screen/transactions'
 import Balance from '@/components/home screen/balance'
-
+import Hoc from '@/components/shared/Hoc'
 export default function home() {
   return (
     <div>
+      <Hoc />
       <Items date={'Today'} username={'Yusuf'} />
       <Balance income={40000} expenses={32000}/>
       <div className=' px-2'>

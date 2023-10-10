@@ -6,6 +6,7 @@ import ExpenseList from "@/components/shared/ExpenseList";
 import IncomeList from "@/components/shared/IncomeList";
 import { Expensedata } from "@/mockdata/Expensedata";
 import { Incomedata } from "@/mockdata/Incomedata";
+import Hoc from "@/components/shared/Hoc";
 
 export default function statistics() {
   ChartJS.register(ArcElement, Tooltip, Legend);
@@ -15,11 +16,7 @@ export default function statistics() {
       {
         label: "# of Votes",
         data: [5120, 1280, 532],
-        backgroundColor: [
-          "red",
-          "blue",
-          "yellow",
-        ],
+        backgroundColor: ["red", "blue", "yellow"],
         borderColor: [
           "rgba(255, 99, 132, 1)",
           "rgba(54, 162, 235, 1)",
@@ -33,6 +30,7 @@ export default function statistics() {
 
   return (
     <div>
+      <Hoc />
       <div className="flex justify-start items-center m-7">
         <FaArrowLeftLong className="h-6 w-7 text-blue-500"></FaArrowLeftLong>
         <div className=" flex justify-center w-screen text-2xl font-semibold text-blue-600">

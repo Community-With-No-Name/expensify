@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import Hoc from "@/components/shared/Hoc";
 
 
 export default function latest() {
@@ -37,6 +38,7 @@ export default function latest() {
   }
   return (
     <form onSubmit={handleSubmit} className="m-8 ">
+      <Hoc />
 
       <div className="flex items-center mb-7">
         <AiOutlineArrowLeft className=" justify-start text-[#1466B8]" />

@@ -2,12 +2,14 @@ import Button from '@/components/shared/button'
 import InputComp from '@/components/shared/input'
 import React from 'react'
 import { FaArrowLeftLong } from 'react-icons/fa6'
+import Hoc from '@/components/shared/Hoc'
 
 
 export default function reset_password() {
 
   return (
     <div className='flex flex-col w-full h-screen px-6 pt-16 gap-9'>
+      <Hoc />
       <div className="flex items-center justify-between w-full">
         <div className="">
           <FaArrowLeftLong className='w-6 h-6 text-[#E59500]' />

@@ -7,6 +7,7 @@ import { useMutation } from '@tanstack/react-query'
 import { sign_up } from "@/api/apiCalls";
 import { SIGN_UP } from "@/api/apiURL";
 import { useRouter } from "next/router";
+import Hoc from "@/components/shared/Hoc";
 
 
 export default function register() {
@@ -37,6 +38,7 @@ export default function register() {
   }
   return (
     <form onSubmit={handleSubmit}>
+      <Hoc />
       <div>
         <div className="flex items-center justify-start m-7">
           <FaArrowLeftLong className="h-6 w-7"></FaArrowLeftLong>
