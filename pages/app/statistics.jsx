@@ -29,8 +29,9 @@ export default function statistics() {
   const [open, setOpen] = useState(true);
 
   return (
+    <Hoc>
     <div>
-      <Hoc />
+     
       <div className="flex justify-start items-center m-7">
         <FaArrowLeftLong className="h-6 w-7 text-blue-500"></FaArrowLeftLong>
         <div className=" flex justify-center w-screen text-2xl font-semibold text-blue-600">
@@ -72,5 +73,6 @@ export default function statistics() {
         <IncomeList dataset={Incomedata} open={open}></IncomeList>
       </div>
     </div>
+    </Hoc>
   );
 }

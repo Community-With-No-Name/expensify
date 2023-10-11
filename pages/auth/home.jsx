@@ -5,8 +5,8 @@ import Balance from '@/components/home screen/balance'
 import Hoc from '@/components/shared/Hoc'
 export default function home() {
   return (
+      <Hoc>
     <div>
-      <Hoc />
       <Items date={'Today'} username={'Yusuf'} />
       <Balance income={40000} expenses={32000}/>
       <div className=' px-2'>
@@ -19,5 +19,6 @@ export default function home() {
         <Transactions amount={700} type={'Clothes'} />
       </div>
     </div>
+    </Hoc>
   )
 }

@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import Hoc from "@/components/shared/Hoc";
 
+
 export default function add_transaction() {
   const inputList  = [
     {
@@ -63,8 +64,9 @@ export default function add_transaction() {
     })
   }
   return (
+    <Hoc>
     <form onSubmit={handleSubmit} className="flex flex-col w-full h-screen no-scrollbar overflow-y-scroll gap-10 px-6 pt-16">
-      <Hoc />
+      
       <TopNav title={"Add Transaction"} />
       <div className="flex flex-col gap-6">
         <SelectComp
@@ -90,5 +92,6 @@ export default function add_transaction() {
         <Button color="primary" click={()=>{}} name={"Add Transaction"} type={"submit"} />
       </div>
     </form>
+    </Hoc>
   );
 }

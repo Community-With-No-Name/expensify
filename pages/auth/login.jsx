@@ -37,8 +37,8 @@ export default function latest() {
     })
   }
   return (
+      <Hoc>
     <form onSubmit={handleSubmit} className="m-8 ">
-      <Hoc />
 
       <div className="flex items-center mb-7">
         <AiOutlineArrowLeft className=" justify-start text-[#1466B8]" />
@@ -83,5 +83,6 @@ export default function latest() {
       </div>
       </div>
     </form>
+    </Hoc>
   );
 }
