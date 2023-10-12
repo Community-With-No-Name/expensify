@@ -2,9 +2,11 @@ import InputComp from "@/components/shared/input";
 import React from "react";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import Button from "@/components/shared/button";
+import Hoc from "@/components/shared/Hoc";
 
 export default function Recovery() {
   return (
+    <Hoc>
     <div className="px-6 pt-[66px] bg-[#EDEEF2] h-screen w-screen">
       <div className="flex items-center gap-[30px] mb-7 px-6 ">
         <FaArrowLeftLong className="h-6 w-7 text-[#1466B8] "></FaArrowLeftLong>
@@ -26,5 +28,6 @@ export default function Recovery() {
         <Button color={""} name={"Back to Login"} />
       </div>
     </div>
+    </Hoc>
   );
 }

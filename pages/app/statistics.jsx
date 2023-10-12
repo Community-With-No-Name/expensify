@@ -6,6 +6,7 @@ import ExpenseList from "@/components/shared/ExpenseList";
 import IncomeList from "@/components/shared/IncomeList";
 import { Expensedata } from "@/mockdata/Expensedata";
 import { Incomedata } from "@/mockdata/Incomedata";
+import Hoc from "@/components/shared/Hoc";
 
 export default function statistics() {
   ChartJS.register(ArcElement, Tooltip, Legend);
@@ -32,6 +33,7 @@ export default function statistics() {
   const [open, setOpen] = useState(true);
 
   return (
+    <Hoc>
     <div>
       <div className="flex justify-start items-center m-7">
         <FaArrowLeftLong className="h-6 w-7 text-blue-500"></FaArrowLeftLong>
@@ -74,5 +76,6 @@ export default function statistics() {
         <IncomeList dataset={Incomedata} open={open}></IncomeList>
       </div>
     </div>
+    </Hoc>
   );
 }

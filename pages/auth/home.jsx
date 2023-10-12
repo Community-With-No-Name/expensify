@@ -4,6 +4,7 @@ import Transactions from '@/components/home screen/transactions'
 import Balance from '@/components/home screen/balance'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
+import Hoc from '@/components/shared/Hoc';
 
 export default function home() {
 
@@ -30,6 +31,7 @@ export default function home() {
   };
 
   return (
+    <Hoc>
     <div>
       <Items date={'Today'} username={'Yusuf'} />
       <Balance income={40000} expenses={32000}/>
@@ -48,5 +50,6 @@ export default function home() {
         </div>
       </div>
     </div>
+    </Hoc>
   )
 }
