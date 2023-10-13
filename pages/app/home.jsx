@@ -1,7 +1,10 @@
-import React from 'react'
+import Hoc from "@/components/shared/Hoc";
+import React from "react";
 
 export default function home() {
   return (
-    <div>home</div>
-  )
+    <Hoc>
+      <div>home</div>
+    </Hoc>
+  );
 }
